@@ -1,8 +1,10 @@
 using AnemicModel;
 using AppService.DepartmentRequests.MRQueries.RequestsQueryMR;
 using AppService.GraphQLQueries.OrderQueries;
+using AppService.OrderRequest.MRQueries.OrderRequestsQueryMR;
 using AppService.Services;
 using Core.Interfaces;
+using Core.Interfaces.IOrderRequest;
 using Core.Mocking;
 using MediatR;
 
@@ -17,10 +19,11 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IRequestRepoMock, RequestRepoMock>();
 builder.Services.AddScoped<IRequestService, RequestService>();
-
+builder.Services.AddScoped<IOrderRequestService, OrderRequestService>();
 
 
 builder.Services.AddMediatR(typeof(GetAllRequestsQueryMR).Assembly);
+builder.Services.AddMediatR(typeof(GetAllOrderRequestsQueryMR).Assembly);
 builder.Services.AddMediatR(typeof(Program).Assembly);
 
 builder.Services.AddGraphQLServer().

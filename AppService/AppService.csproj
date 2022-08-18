@@ -19,4 +19,8 @@
     <ProjectReference Include="..\Model\AnemicModel.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="OrderRequest\Models\" />
+  </ItemGroup>
+
 </Project>
